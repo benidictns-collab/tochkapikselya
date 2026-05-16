@@ -150,7 +150,7 @@ export default function HomePage() {
             </div>
             <hr className="my-[2vw] border-none h-px bg-white/20" />
             <p className="mt-auto ml-auto max-w-[50ch] text-right text-[clamp(1rem,2.5vw,2rem)] font-normal leading-relaxed">
-              Работаем с бизнесом по всему Югу России. Знаем специфику рынка Ростова-на-Дону.
+              Работаем с бизнесом по всей России. Знаем специфику рынка Ростова-на-Дону.
             </p>
           </FlowSection>
 
@@ -159,13 +159,13 @@ export default function HomePage() {
             <hr className="my-[2vw] border-none h-px bg-black/20" />
             <div>
               <h2 className="text-5xl md:text-8xl lg:text-[12rem] font-bold leading-[0.85] uppercase tracking-tight">
-                7 лет<br />веб-<br />дизайне
+                1 год<br />веб-<br />дизайна
               </h2>
             </div>
             <hr className="my-[2vw] border-none h-px bg-black/20" />
             <div className="flex flex-wrap gap-[3vw]">
               <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-600">150+ проектов</p>
+                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-600">20+ проектов</p>
                 <p className="text-sm leading-relaxed opacity-75">Интернет-магазины, лендинги, порталы и SaaS.</p>
               </div>
               <div className="min-w-[140px] flex-1">
@@ -217,7 +217,7 @@ export default function HomePage() {
                   <div className="h-10 w-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400/20 transition-colors shrink-0">
                     <Phone className="h-4 w-4 text-yellow-400" />
                   </div>
-                  <span>+7 (863) 200-10-20</span>
+                  <span>+7 928 459 38 00</span>
                 </a>
                 <a href="mailto:hello@tochkapikselya.ru" className="flex items-center gap-3 text-white/80 hover:text-yellow-400 transition-colors group">
                   <div className="h-10 w-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400/20 transition-colors shrink-0">
@@ -229,7 +229,7 @@ export default function HomePage() {
                   <div className="h-10 w-10 rounded-full bg-yellow-400/10 flex items-center justify-center shrink-0">
                     <MapPin className="h-4 w-4 text-yellow-400" />
                   </div>
-                  <span>г. Ростов-на-Дону, ул. Большая Садовая, 100</span>
+                  <span>г. Ростов-на-Дону, ул. Обороны 49</span>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@ export default function HomePage() {
             <div className="h-7 w-7 rounded bg-yellow-400 flex items-center justify-center">
               <span className="text-black font-extrabold text-xs">TP</span>
             </div>
-            <span className="text-white/60 text-sm">© 2024 Точка пикселя — создание сайтов в Ростове-на-Дону</span>
+            <span className="text-white/60 text-sm">© 2026 Точка пикселя — создание сайтов в Ростове-на-Дону</span>
           </div>
           <p className="text-white/40 text-sm">Студия веб-дизайна и разработки</p>
         </div>
