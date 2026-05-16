@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
@@ -41,7 +40,7 @@ const SectionItem = ({ item }: { item: ParallaxSectionItem }) => {
     <div
       ref={ref}
       className={cn(
-        "min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 px-6 md:px-20",
+        "min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 px-6 md:px-20",
         item.reverse ? "md:flex-row-reverse" : ""
       )}
     >
@@ -59,21 +58,17 @@ const SectionItem = ({ item }: { item: ParallaxSectionItem }) => {
           {item.description}
         </motion.p>
       </motion.div>
-      
-      {/* БЛОК КАРТИНКИ: Широкий прямоугольник (16:10) вместо квадрата */}
       <motion.div
         style={{
           opacity: opacityContent,
           clipPath: clipProgress,
         }}
-        className="relative shrink-0 w-72 h-44 sm:w-96 sm:h-60 md:w-[520px] md:h-[325px] lg:w-[640px] lg:h-[400px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10"
+        className="relative shrink-0"
       >
-        <Image
+        <img
           src={item.imageUrl}
+          className="w-64 h-64 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] object-cover rounded-2xl shadow-2xl border-4 border-white/10"
           alt={item.title}
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 640px) 288px, (max-width: 768px) 384px, (max-width: 1024px) 520px, 640px"
         />
       </motion.div>
     </div>
