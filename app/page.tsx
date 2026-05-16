@@ -43,7 +43,7 @@ const portfolioItems: CardStackItem[] = [
     id: 4,
     title: "ГК XELON",
     description: "Корпоративный сайт группы компаний: 6 дочерних компаний, 9 направлений деятельности.",
-    imageSrc: "/images/portfolio-xelon.jpg", // ИЗМЕНЕНО
+    imageSrc: "/images/gk-xelon.jpg", // ИЗМЕНЕНО
     tag: "Холдинг",
   },
   {
