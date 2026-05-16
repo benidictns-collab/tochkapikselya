@@ -9,9 +9,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-function cx(
-  ...parts: Array<string | undefined | false | null>
-): string {
+function cx(...parts: Array<string | undefined | false | null>): string {
   return parts.filter(Boolean).join(" ");
 }
 
@@ -31,10 +29,7 @@ export const FlowSection: React.FC<FlowSectionProps> = ({
   <section
     data-flow-section
     aria-label={ariaLabel}
-    className={cx(
-      "relative min-h-screen w-full overflow-hidden",
-      className
-    )}
+    className={cx("relative min-h-screen w-full overflow-hidden", className)}
   >
     <div
       data-flow-inner
@@ -55,8 +50,7 @@ export interface FlowArtProps {
   "aria-label"?: string;
 }
 
-const childCount = (children: React.ReactNode) =>
-  React.Children.count(children);
+const childCount = (children: React.ReactNode) => React.Children.count(children);
 
 const FlowArt: React.FC<FlowArtProps> = ({
   children,
@@ -79,9 +73,7 @@ const FlowArt: React.FC<FlowArtProps> = ({
       if (!containerRef.current || reducedMotion) return;
 
       const sections = Array.from(
-        containerRef.current.querySelectorAll<HTMLElement>(
-          "[data-flow-section]"
-        )
+        containerRef.current.querySelectorAll<HTMLElement>("[data-flow-section]")
       );
       if (sections.length === 0) return;
 
@@ -90,14 +82,14 @@ const FlowArt: React.FC<FlowArtProps> = ({
       sections.forEach((section, i) => {
         gsap.set(section, { zIndex: i + 1 });
 
-        const inner = section.querySelector<HTMLElement>(
-          ".flow-art-container"
-        );
+        const inner = section.querySelector<HTMLElement>(".flow-art-container");
         if (!inner) return;
 
         if (i > 0) {
+          // ИСПРАВЛЕНИЕ: На мобильных отключаем вращение, чтобы не было горизонтального скролла
+          const isMobile = window.innerWidth < 768;
           gsap.set(inner, {
-            rotation: 30,
+            rotation: isMobile ? 0 : 30,
             transformOrigin: "bottom left",
           });
           const tween = gsap.to(inner, {
