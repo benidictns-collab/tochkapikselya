@@ -82,66 +82,71 @@ export function ScrollingFeatureShowcase() {
   return (
     <div
       ref={scrollContainerRef}
-      className="h-screen w-full overflow-y-auto"
+      className="h-[100dvh] w-full overflow-y-auto"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       <div style={{ height: `${slidesData.length * 100}vh` }}>
         <div
-          className="sticky top-0 h-screen w-full flex flex-col items-center justify-center"
+          className="sticky top-0 h-[100dvh] w-full flex flex-col items-center justify-center"
           style={dynamicStyles}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 h-full w-full max-w-7xl mx-auto">
+            
             {/* Левая колонка (Адаптивная) */}
             <div
-              className={`relative flex flex-col justify-center p-8 md:p-16 border-r-0 md:border-r ${
+              className={`relative flex flex-col justify-between md:justify-center p-8 pb-12 md:p-16 border-r-0 md:border-r ${
                 isDark ? "md:border-white/10" : "md:border-black/10"
               }`}
             >
-              {/* Пагинация */}
-              <div className="absolute top-8 left-8 md:top-16 md:left-16 flex space-x-2">
-                {slidesData.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => scrollToSlide(index)}
-                    className={`h-1 rounded-full transition-all duration-500 ease-in-out ${
-                      index === activeIndex
-                        ? isDark
-                          ? "w-8 md:w-12 bg-yellow-400"
-                          : "w-8 md:w-12 bg-black"
-                        : isDark
-                        ? "w-4 md:w-6 bg-white/20"
-                        : "w-4 md:w-6 bg-black/20"
-                    }`}
-                    aria-label={`Перейти к слайду ${index + 1}`}
-                  />
-                ))}
+              {/* Верхняя часть: Пагинация + Текст */}
+              <div className="flex flex-col pt-8 md:pt-0">
+                {/* Пагинация */}
+                <div className="flex space-x-2 mb-8 md:mb-0 md:absolute md:top-16 md:left-16">
+                  {slidesData.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => scrollToSlide(index)}
+                      className={`h-1 rounded-full transition-all duration-500 ease-in-out ${
+                        index === activeIndex
+                          ? isDark
+                            ? "w-8 md:w-12 bg-yellow-400"
+                            : "w-8 md:w-12 bg-black"
+                          : isDark
+                          ? "w-4 md:w-6 bg-white/20"
+                          : "w-4 md:w-6 bg-black/20"
+                      }`}
+                      aria-label={`Перейти к слайду ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Текст слайда (min-h для мобильных, чтобы не прыгал) */}
+                <div className="w-full min-h-[160px] md:min-h-0 md:relative md:h-72">
+                  {slidesData.map((slide, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                        index === activeIndex
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-10"
+                      }`}
+                    >
+                      <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
+                        {slide.title}
+                      </h2>
+                      <p className="mt-4 md:mt-6 text-base md:text-xl max-w-md opacity-80">
+                        {slide.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="relative h-56 md:h-72 w-full">
-                {slidesData.map((slide, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                      index === activeIndex
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-10"
-                    }`}
-                  >
-                    <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
-                      {slide.title}
-                    </h2>
-                    <p className="mt-4 md:mt-6 text-base md:text-xl max-w-md opacity-80">
-                      {slide.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Кнопка CTA */}
-              <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16">
+              {/* Нижняя часть: Кнопка CTA (На мобильных в потоке, на десктопе absolute) */}
+              <div className="w-full md:absolute md:bottom-16 md:left-16">
                 <a
                   href="#contacts"
-                  className={`px-8 py-3 md:px-10 md:py-4 font-semibold rounded-full uppercase tracking-wider transition-colors inline-block text-sm md:text-base ${
+                  className={`inline-block px-8 py-3 md:px-10 md:py-4 font-semibold rounded-full uppercase tracking-wider transition-colors text-sm md:text-base ${
                     isDark
                       ? "bg-yellow-400 text-black hover:bg-yellow-300"
                       : "bg-black text-white hover:bg-gray-800"

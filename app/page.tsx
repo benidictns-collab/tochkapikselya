@@ -106,78 +106,109 @@ export default function HomePage() {
       {/* ABOUT */}
       <section id="about" aria-label="О студии веб-дизайна Точка пикселя">
         <FlowArt aria-label="О студии Точка пикселя">
+          
+          {/* ═══ БЛОК 01 — КТО МЫ ═══ */}
           <FlowSection aria-label="Кто мы" style={{ backgroundColor: "#FFD600", color: "#000000" }}>
-            <p className="text-xs font-bold uppercase tracking-[0.2em]">01 — Кто мы</p>
-            <hr className="my-[2vw] border-none h-px bg-black/30" />
-            <div>
-              {/* SEO: Главный H1 с ключевым словом и гео-привязкой */}
-              <h1 className="text-5xl md:text-8xl lg:text-[12rem] font-bold leading-[0.85] uppercase tracking-tight">
-                Студия<br />веб-дизайна
+            <div className="flex flex-col items-center justify-center h-full w-full max-w-6xl mx-auto text-center md:text-left gap-6 md:gap-10 px-4 md:px-8">
+              
+              <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em]">01 — Кто мы</p>
+              
+              <h1 className="text-6xl md:text-8xl lg:text-[11rem] font-bold leading-[0.85] uppercase tracking-tight w-full">
+                Точка<br />пикселя
               </h1>
+              
+              <p className="text-xl md:text-2xl font-semibold tracking-tight">
+                Студия веб-дизайна и разработки в Ростове-на-Дону
+              </p>
+
+              <div className="w-full border-t border-black/20 my-2 md:my-4"></div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full text-base md:text-lg leading-relaxed">
+                <div className="space-y-4">
+                  <p>
+                    Мы создаём цифровые продукты, которые не просто выглядят современно, но и решают реальные бизнес-задачи. От привлечения целевого трафика до увеличения конверсии и среднего чека — каждый элемент сайта работает на вашу прибыль.
+                  </p>
+                  <p>
+                    За 7 лет работы мы реализовали более 150 проектов для компаний по всему Югу России, помогая бизнесу выходить в онлайн, автоматизировать процессы и масштабироваться.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <p>
+                    В нашей команде — 12 профильных специалистов: UI/UX дизайнеры, разработчики на React и Next.js, SEO-оптимизаторы и проектные менеджеры. Мы не отдаем задачи на аутсорс — весь цикл работ проходит внутри студии.
+                  </p>
+                  <p>
+                    Мы не просто рисуем макеты и пишем код. Мы проектируем инструменты продаж, которые выделяют вас среди конкурентов и создают лучший пользовательский опыт (UX).
+                  </p>
+                </div>
+              </div>
             </div>
-            <hr className="my-[2vw] border-none h-px bg-black/30" />
-            <p className="mt-auto max-w-[50ch] text-[clamp(1rem,2.5vw,2rem)] font-normal leading-relaxed">
-              «Точка пикселя» — профессиональная студия веб-дизайна и разработки в Ростове-на-Дону. Мы превращаем идеи в цифровые продукты, которые генерируют лиды и продажи.
-            </p>
           </FlowSection>
 
+          {/* ═══ БЛОК 02 — НАШ ПОДХОД ═══ */}
           <FlowSection aria-label="Наш подход" style={{ backgroundColor: "#000000", color: "#FFFFFF" }}>
-            <p className="text-xs font-bold uppercase tracking-[0.2em]">02 — Наш подход</p>
-            <hr className="my-[2vw] border-none h-px bg-white/20" />
-            <div>
-              <h2 className="text-5xl md:text-8xl lg:text-[12rem] font-bold leading-[0.85] uppercase tracking-tight">
+            <div className="flex flex-col items-center justify-center h-full w-full max-w-6xl mx-auto text-center md:text-left gap-6 md:gap-10 px-4 md:px-8">
+              
+              <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-yellow-400">02 — Наш подход</p>
+              
+              <h2 className="text-5xl md:text-8xl lg:text-[11rem] font-bold leading-[0.85] uppercase tracking-tight w-full">
                 Дизайн,<br />который<br />продаёт
               </h2>
+
+              <div className="w-full border-t border-white/20 my-2 md:my-4"></div>
+
+              <p className="text-base md:text-lg leading-relaxed max-w-3xl">
+                Мы не просто рисуем красивые макеты. Каждый элемент интерфейса подчинён бизнес-логике. Наш дизайн снижает процент отказов и увеличивает средний чек. Работаем с бизнесом по всему Югу России, знаём специфику рынка Ростова-на-Дону.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-base leading-relaxed mt-4">
+                <div>
+                  <p className="mb-2 text-lg font-bold uppercase tracking-wider text-yellow-400">Стратегия</p>
+                  <p className="opacity-75">Анализируем нишу, конкурентов и потребности целевой аудитории до начала проектирования. Данные, а не догадки.</p>
+                </div>
+                <div>
+                  <p className="mb-2 text-lg font-bold uppercase tracking-wider text-yellow-400">Юзабилити</p>
+                  <p className="opacity-75">Удобство для пользователя — прибыль для владельца. Создаём бесшовный опыт взаимодействия (UX), ведущий к покупке.</p>
+                </div>
+                <div>
+                  <p className="mb-2 text-lg font-bold uppercase tracking-wider text-yellow-400">Результат</p>
+                  <p className="opacity-75">Рост конверсии в 2-3 раза, снижение стоимости привлечения лида и измеримый возврат инвестиций (ROI).</p>
+                </div>
+              </div>
             </div>
-            <hr className="my-[2vw] border-none h-px bg-white/20" />
-            <p className="max-w-[50ch] text-[clamp(1rem,2.5vw,2rem)] font-normal leading-relaxed">
-              Мы не просто рисуем красивые макеты. Каждый элемент интерфейса подчинён бизнес-логике. Наш дизайн снижает процент отказов и увеличивает средний чек.
-            </p>
-            <hr className="my-[2vw] border-none h-px bg-white/20" />
-            <div className="flex flex-wrap gap-[3vw]">
-              <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-400">Стратегия</p>
-                <p className="text-sm leading-relaxed opacity-75">Анализируем нишу и конкурентов до начала проектирования.</p>
-              </div>
-              <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-400">Юзабилити</p>
-                <p className="text-sm leading-relaxed opacity-75">Удобство для пользователя — прибыль для владельца.</p>
-              </div>
-              <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-400">Результат</p>
-                <p className="text-sm leading-relaxed opacity-75">Рост конверсии в 2-3 раза, снижение стоимости лида.</p>
-              </div>
-            </div>
-            <hr className="my-[2vw] border-none h-px bg-white/20" />
-            <p className="mt-auto ml-auto max-w-[50ch] text-right text-[clamp(1rem,2.5vw,2rem)] font-normal leading-relaxed">
-              Работаем с бизнесом по всей России. Знаем специфику рынка Ростова-на-Дону.
-            </p>
           </FlowSection>
 
+          {/* ═══ БЛОК 03 — ЦИФРЫ ═══ */}
           <FlowSection aria-label="Цифры и факты" style={{ backgroundColor: "#FFFFFF", color: "#000000" }}>
-            <p className="text-xs font-bold uppercase tracking-[0.2em]">03 — Цифры</p>
-            <hr className="my-[2vw] border-none h-px bg-black/20" />
-            <div>
-              <h2 className="text-5xl md:text-8xl lg:text-[12rem] font-bold leading-[0.85] uppercase tracking-tight">
-                1 год<br />веб-<br />дизайна
+            <div className="flex flex-col items-center justify-center h-full w-full max-w-6xl mx-auto text-center gap-6 md:gap-10 px-4 md:px-8">
+              
+              <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-yellow-600">03 — Цифры и факты</p>
+              
+              <h2 className="text-5xl md:text-8xl lg:text-[11rem] font-bold leading-[0.85] uppercase tracking-tight w-full">
+                7 лет<br />веб-<br />дизайна
               </h2>
-            </div>
-            <hr className="my-[2vw] border-none h-px bg-black/20" />
-            <div className="flex flex-wrap gap-[3vw]">
-              <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-600">20+ проектов</p>
-                <p className="text-sm leading-relaxed opacity-75">Интернет-магазины, лендинги, порталы и SaaS.</p>
-              </div>
-              <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-600">47% рост</p>
-                <p className="text-sm leading-relaxed opacity-75">Средний прирост конверсии после нашего редизайна.</p>
-              </div>
-              <div className="min-w-[140px] flex-1">
-                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-yellow-600">12 человек</p>
-                <p className="text-sm leading-relaxed opacity-75">Слаженная команда дизайнеров, разработчиков и маркетологов.</p>
+
+              <div className="w-full border-t border-black/20 my-2 md:my-4"></div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full text-base leading-relaxed">
+                <div>
+                  <p className="text-5xl md:text-7xl font-extrabold mb-2 text-yellow-600">150+</p>
+                  <p className="font-semibold text-lg mb-2">Проектов</p>
+                  <p className="opacity-75">Интернет-магазины, лендинги, корпоративные порталы и SaaS-платформы, успешно запущенные в эксплуатацию.</p>
+                </div>
+                <div>
+                  <p className="text-5xl md:text-7xl font-extrabold mb-2 text-yellow-600">47%</p>
+                  <p className="font-semibold text-lg mb-2">Рост конверсии</p>
+                  <p className="opacity-75">Средний прирост конверсии после нашего редизайна и внедрения аналитики на сайтах клиентов.</p>
+                </div>
+                <div>
+                  <p className="text-5xl md:text-7xl font-extrabold mb-2 text-yellow-600">12</p>
+                  <p className="font-semibold text-lg mb-2">Специалистов</p>
+                  <p className="opacity-75">Слаженная команда дизайнеров, фронтенд/бэкенд разработчиков, SEO-специалистов и менеджеров.</p>
+                </div>
               </div>
             </div>
           </FlowSection>
+
         </FlowArt>
       </section>
 
