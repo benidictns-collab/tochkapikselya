@@ -92,49 +92,66 @@ export function ScrollingFeatureShowcase() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 h-full w-full max-w-7xl mx-auto">
             
-            {/* Левая колонка (Адаптивная) */}
-            <div
-              className={`relative flex flex-col justify-between md:justify-center p-8 pb-12 md:p-16 border-r-0 md:border-r ${
-                isDark ? "md:border-white/10" : "md:border-black/10"
-              }`}
-            >
-              {/* Верхняя часть: Пагинация + Текст */}
-              <div className="flex flex-col pt-8 md:pt-0">
-                {/* Пагинация */}
-                <div className="flex space-x-2 mb-8 md:mb-0 md:absolute md:top-16 md:left-16">
+            {/* Левая колонка — полный редизайн мобильной раскладки */}
+            <div className="flex flex-col justify-between md:justify-center h-full p-6 md:p-16 border-r-0 md:border-r ${isDark ? 'md:border-white/10' : 'md:border-black/10'}">
+              
+              {/* Шапка: Логотип + Пагинация (Только мобилка) */}
+              <div className="flex items-center justify-between md:hidden pt-2 safe-area-top">
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded bg-yellow-400 flex items-center justify-center">
+                    <span className="text-black font-extrtrabold text-xs">TP</span>
+                  </div>
+                  <span className="font-bold text-sm">Точка пикселя</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  {slidesData.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => scrollToSlide(index)}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        index === activeIndex
+                          ? isDark ? "w-6 bg-yellow-400" : "w-6 bg-black"
+                          : isDark ? "w-3 bg-white/30" : "w-3 bg-black/30"
+                      }`}
+                      aria-label={`Слайд ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Центральный контент */}
+              <div className="flex-1 flex flex-col justify-center max-w-lg mx-auto md:mx-0 w-full">
+                {/* Десктопная пагинация */}
+                <div className="hidden md:flex space-x-2 mb-12">
                   {slidesData.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => scrollToSlide(index)}
                       className={`h-1 rounded-full transition-all duration-500 ease-in-out ${
                         index === activeIndex
-                          ? isDark
-                            ? "w-8 md:w-12 bg-yellow-400"
-                            : "w-8 md:w-12 bg-black"
-                          : isDark
-                          ? "w-4 md:w-6 bg-white/20"
-                          : "w-4 md:w-6 bg-black/20"
+                          ? isDark ? "w-12 bg-yellow-400" : "w-12 bg-black"
+                          : isDark ? "w-6 bg-white/20" : "w-6 bg-black/20"
                       }`}
-                      aria-label={`Перейти к слайду ${index + 1}`}
+                      aria-label={`Слайд ${index + 1}`}
                     />
                   ))}
                 </div>
 
-                {/* Текст слайда (min-h для мобильных, чтобы не прыгал) */}
-                <div className="w-full min-h-[160px] md:min-h-0 md:relative md:h-72">
+                {/* Текст слайда */}
+                <div className="relative w-full">
                   {slidesData.map((slide, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                      className={`transition-all duration-700 ease-in-out ${
                         index === activeIndex
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-10"
+                          ? "opacity-100 translate-y-0 relative"
+                          : "opacity-0 translate-y-8 absolute inset-0"
                       }`}
                     >
-                      <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
+                      <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
                         {slide.title}
                       </h2>
-                      <p className="mt-4 md:mt-6 text-base md:text-xl max-w-md opacity-80">
+                      <p className="mt-5 md:mt-6 text-lg md:text-xl max-w-md opacity-80">
                         {slide.description}
                       </p>
                     </div>
@@ -142,17 +159,18 @@ export function ScrollingFeatureShowcase() {
                 </div>
               </div>
 
-              {/* Нижняя часть: Кнопка CTA (На мобильных в потоке, на десктопе absolute) */}
-              <div className="w-full md:absolute md:bottom-16 md:left-16">
+              {/* Подвал: Кнопка CTA */}
+              <div className="pb-8 pt-6 md:pt-0">
                 <a
                   href="#contacts"
-                  className={`inline-block px-8 py-3 md:px-10 md:py-4 font-semibold rounded-full uppercase tracking-wider transition-colors text-sm md:text-base ${
+                  className={`inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 md:px-10 md:py-4 font-semibold rounded-full uppercase tracking-wider transition-colors text-center text-sm md:text-base ${
                     isDark
                       ? "bg-yellow-400 text-black hover:bg-yellow-300"
                       : "bg-black text-white hover:bg-gray-800"
                   }`}
                 >
                   Начать проект
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
             </div>
