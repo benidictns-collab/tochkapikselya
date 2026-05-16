@@ -60,20 +60,20 @@ const SectionItem = ({ item }: { item: ParallaxSectionItem }) => {
         </motion.p>
       </motion.div>
       
-      {/* БЛОК КАРТИНКИ: Широкий контейнер 16:9 для макетов сайтов */}
+      {/* БЛОК КАРТИНКИ: Широкий прямоугольник (16:10) вместо квадрата */}
       <motion.div
         style={{
           opacity: opacityContent,
           clipPath: clipProgress,
         }}
-        className="relative shrink-0 w-[300px] h-[168px] sm:w-[450px] sm:h-[253px] md:w-[600px] md:h-[337px] lg:w-[800px] lg:h-[450px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10"
+        className="relative shrink-0 w-72 h-44 sm:w-96 sm:h-60 md:w-[520px] md:h-[325px] lg:w-[640px] lg:h-[400px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10"
       >
         <Image
           src={item.imageUrl}
           alt={item.title}
           fill
-          className="object-cover object-top"
-          sizes="(max-width: 640px) 300px, (max-width: 768px) 450px, (max-width: 1024px) 600px, 800px"
+          className="object-cover object-center"
+          sizes="(max-width: 640px) 288px, (max-width: 768px) 384px, (max-width: 1024px) 520px, 640px"
         />
       </motion.div>
     </div>
