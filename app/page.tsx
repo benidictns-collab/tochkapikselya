@@ -43,14 +43,14 @@ const portfolioItems: CardStackItem[] = [
     id: 4,
     title: "ГК XELON",
     description: "Корпоративный сайт группы компаний: 6 дочерних компаний, 9 направлений деятельности.",
-    imageSrc: "/images/portfolio-xelon.png", // ИЗМЕНЕНО
+    imageSrc: "/images/portfolio-xelon.jpg", // ИЗМЕНЕНО
     tag: "Холдинг",
   },
   {
     id: 5,
     title: 'ООО "КСЕЛОН" — Производство ППД и Дисплеев',
     description: "Корпоративный сайт производителя: от детекторов до дисплеев и AI-модулей.",
-    imageSrc: "/images/portfolio-kselon.png", // ИЗМЕНЕНО
+    imageSrc: "/images/portfolio-kselon.jpg", // ИЗМЕНЕНО
     tag: "Производство",
   },
 ];
