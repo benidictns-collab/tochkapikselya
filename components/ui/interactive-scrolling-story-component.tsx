@@ -92,17 +92,11 @@ export function ScrollingFeatureShowcase() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 h-full w-full max-w-7xl mx-auto">
             
-            {/* Левая колонка — полный редизайн мобильной раскладки */}
-            <div className="flex flex-col justify-between md:justify-center h-full p-6 md:p-16 border-r-0 md:border-r ${isDark ? 'md:border-white/10' : 'md:border-black/10'}">
+            {/* Левая колонка */}
+            <div className="flex flex-col justify-between md:justify-center h-full p-6 md:p-16">
               
-              {/* Шапка: Логотип + Пагинация (Только мобилка) */}
-              <div className="flex items-center justify-between md:hidden pt-2 safe-area-top">
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded bg-yellow-400 flex items-center justify-center">
-                    <span className="text-black font-extrtrabold text-xs">TP</span>
-                  </div>
-                  <span className="font-bold text-sm">Точка пикселя</span>
-                </div>
+              {/* Шапка: Пагинация (Только мобилка) - Убран логотип, добавлен отступ pt-16 от Navbar */}
+              <div className="flex items-center justify-end md:hidden pt-16">
                 <div className="flex items-center gap-1.5">
                   {slidesData.map((_, index) => (
                     <button
@@ -120,7 +114,7 @@ export function ScrollingFeatureShowcase() {
               </div>
 
               {/* Центральный контент */}
-              <div className="flex-1 flex flex-col justify-center max-w-lg mx-auto md:mx-0 w-full">
+              <div className="flex-1 flex flex-col justify-center mt-4 md:mt-0 max-w-lg mx-auto md:mx-0 w-full">
                 {/* Десктопная пагинация */}
                 <div className="hidden md:flex space-x-2 mb-12">
                   {slidesData.map((_, index) => (
