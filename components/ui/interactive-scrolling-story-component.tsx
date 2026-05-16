@@ -6,28 +6,28 @@ const slidesData = [
   {
     title: "Веб-дизайн",
     description: "Создаём сайты, которые не просто красиво выглядят, но и решают бизнес-задачи.",
-    image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero-web-design.jpg", // ИЗМЕНЕНО
     bgColor: "#000000",
     textColor: "#FFFFFF",
   },
   {
     title: "UI/UX Дизайн",
     description: "Проектируем интерфейсы, в которых каждый элемент продуман.",
-    image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero-ui-ux.jpg", // ИЗМЕНЕНО
     bgColor: "#FFD600",
     textColor: "#000000",
   },
   {
     title: "Брендинг",
     description: "Строим визуальную идентичность, которая выделяет вас среди конкурентов.",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero-branding.jpg", // ИЗМЕНЕНО
     bgColor: "#000000",
     textColor: "#FFFFFF",
   },
   {
     title: "Разработка",
     description: "Превращаем дизайн в быстрый и надёжный продукт.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero-development.jpg", // ИЗМЕНЕНО
     bgColor: "#FFD600",
     textColor: "#000000",
   },
